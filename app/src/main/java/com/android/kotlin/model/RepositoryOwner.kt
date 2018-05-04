@@ -11,11 +11,8 @@ data class RepositoryOwner(
         val url: String,
         val type: String
 ) : PaperParcelable {
-    @Transient
-    val somethingToExclude = 10000L
-
     companion object {
         @JvmField
-        val CREATOR = RepositoryOwner.CREATOR
+        val CREATOR = PaperParcelRepositoryOwner.CREATOR
     }
 }

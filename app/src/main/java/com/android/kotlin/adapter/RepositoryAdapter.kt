@@ -4,6 +4,8 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.android.kotlin.BR
+import com.android.kotlin.activity.RepositoryDetailActivity
 import com.android.kotlin.databinding.RepositoryItemBinding
 import com.android.kotlin.extension.format
 import com.android.kotlin.extension.loadUrl
@@ -39,7 +41,7 @@ class RepositoryAdapter(val context: Context) : RecyclerView.Adapter<RepositoryA
             binding.setVariable(BR.repo, repository)
             binding.setVariable(BR.pushedDate, PrettyTime().format(repository.pushed_at))
             itemView.repositoryItemImage.loadUrl(repository.owner.avatar_url)
-//            itemView.repositoryItemRootLayout.setOnClickListener { context.startActivity(RepositoryDetailActivity.getIntent(context, repository)) }
+            itemView.repositoryItemRootLayout.setOnClickListener { context.startActivity(RepositoryDetailActivity.getIntent(context, repository)) }
         }
     }
 }

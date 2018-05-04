@@ -5,6 +5,11 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    kapt {
+        mapDiagnosticLocations = true
+    }
 
     dataBinding {
         enabled = true
@@ -94,4 +99,18 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.1') {
         exclude module: 'support-annotations'
     }
+}
+buildscript {
+    ext.kotlin_version = '1.2.30'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+    }
+}
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }

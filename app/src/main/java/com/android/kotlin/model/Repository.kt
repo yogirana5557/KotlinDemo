@@ -21,11 +21,9 @@ data class Repository(
         val watchers: String,
         val score: Double
 ) : PaperParcelable {
-    @Transient
-    val somethingToExclude = 10000L
 
     companion object {
         @JvmField
-        val CREATOR = Repository.CREATOR
+        val CREATOR = PaperParcelRepository.CREATOR
     }
 }

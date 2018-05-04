@@ -8,6 +8,13 @@
 
     <include layout="@layout/toolbar" />
 
+    <com.android.kotlin.view.SearchCardView
+        android:id="@+id/mainSearchCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/toolbar_elevation" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
